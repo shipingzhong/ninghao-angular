@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from '../../model/post.model';
 
 @Component({
@@ -8,11 +8,17 @@ import { Post } from '../../model/post.model';
 })
 export class PostItemComponent implements OnInit {
   @Input()
-  entity:Post =  new Post('','');
+  entity:Post =  new Post(0,'','');
+
+  @Output()
+  remove = new EventEmitter();
   
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onClick(entity: Post){
+    this.remove.emit(entity);
   }
 
 }

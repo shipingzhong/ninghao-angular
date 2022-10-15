@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { AppRoutingModule } from '../../app-routing.module';
 import { PostItemComponent } from './components/post-item/post-item.component';
+import { PostDetailsComponent } from './componets/post-details/post-details.component';
 
 
 
 @NgModule({
   declarations: [
     PostComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostDetailsComponent
   ],
   imports: [
     CommonModule,AppRoutingModule

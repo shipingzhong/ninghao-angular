@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PostDetailsComponent } from './modules/post/componets/post-details/post-details.component';
+import { PostComponent } from './modules/post/post.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'posts',component:PostComponent},
+  {path:'posts/:id',component:PostDetailsComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
