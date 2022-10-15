@@ -9,6 +9,7 @@ import { Post } from '../../model/post.model';
 export class PostItemComponent implements OnInit {
   @Input()
   entity:Post =  new Post(0,'','');
+  // entity:Post =  {id:0,title:'',body:''};
 
   @Output()
   remove = new EventEmitter();

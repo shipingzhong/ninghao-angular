@@ -17,4 +17,8 @@ import { PostModule } from './modules/post/post.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("AppModule")
+  }
+ }

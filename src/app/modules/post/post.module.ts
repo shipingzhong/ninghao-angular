@@ -20,4 +20,8 @@ import { PostDetailsComponent } from './componets/post-details/post-details.comp
     PostComponent
   ]
 })
-export class PostModule { }
+export class PostModule { 
+  constructor(){
+    console.log("PostModule")
+  }
+}
