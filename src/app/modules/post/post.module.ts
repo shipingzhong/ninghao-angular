@@ -5,23 +5,13 @@ import { AppRoutingModule } from '../../app-routing.module';
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { PostDetailsComponent } from './componets/post-details/post-details.component';
 
-
-
 @NgModule({
-  declarations: [
-    PostComponent,
-    PostItemComponent,
-    PostDetailsComponent
-  ],
-  imports: [
-    CommonModule,AppRoutingModule
-  ],
-  exports:[
-    PostComponent
-  ]
+  declarations: [PostComponent, PostItemComponent, PostDetailsComponent],
+  imports: [CommonModule, AppRoutingModule],
+  exports: [PostComponent],
 })
-export class PostModule { 
-  constructor(){
-    console.log("PostModule")
+export class PostModule {
+  constructor() {
+    console.log('PostModule');
   }
 }
