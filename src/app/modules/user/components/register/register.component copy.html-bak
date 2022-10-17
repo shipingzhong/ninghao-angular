@@ -1,0 +1,2 @@
+<p>Username {{ username.value }}</p>
+<input type="text" [formControl]="username">
