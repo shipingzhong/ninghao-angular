@@ -1,0 +1,9 @@
+<p>post works!</p>
+<h3>{{ title }}</h3>
+<div class="list">
+    <app-post-item
+    *ngFor="let entity of entities"
+    [entity]="entity"
+    (remove)="removeItem($event)"
+    ></app-post-item>
+</div>
