@@ -1,8 +1,9 @@
 <h3 class="title">{{ title }}</h3>
-<ul>
+<div>
     <app-post-item
     *ngFor="let entity of entities"
     [entity]="entity"
     (remove)="removeItem($event)"
+    [class.selected]="entity.id === selectedId"
     ></app-post-item>
-</ul>
+</div>
