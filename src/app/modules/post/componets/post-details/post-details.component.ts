@@ -21,11 +21,23 @@ export class PostDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.route);
-    this.route.paramMap.subscribe((params) => {
-      const postId = +params.get('id');
-      console.log(postId);
-      // this.entity = posts.find(post=> post.id === postId);
-      this.entity = this.postService.show(postId);
+    // this.route.paramMap.subscribe((params) => {
+    //   const postId = +params.get('id');
+    //   console.log(postId);
+    //   // this.entity = posts.find(post=> post.id === postId);
+    //   this.entity = this.postService.show(postId);
+    // });
+    //下面这个为什么报错
+    // this.route.data.subscribe((data: { entity: Post }) => {
+    //下面这个是对的
+    // this.route.data.subscribe((data) => {
+    //   console.log(data);
+    //   this.entity = data['entity'];
+    // });
+    //下面这个也是对的
+    this.route.data.subscribe((data: any) => {
+      console.log(data);
+      this.entity = data.entity;
     });
   }
   // gotoPosts() {

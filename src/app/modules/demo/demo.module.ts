@@ -6,6 +6,7 @@ import { DemoComponent } from './demo.component';
 import { ChildRoutesComponent } from './child-routes/child-routes.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AdminComponent } from './admin/admin.component';
     DemoComponent,
     ChildRoutesComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    AdminDashboardComponent
   ],
   imports: [
     CommonModule,

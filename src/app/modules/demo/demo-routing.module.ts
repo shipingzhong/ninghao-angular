@@ -4,6 +4,10 @@ import { DemoComponent } from './demo.component';
 import { ChildRoutesComponent } from './child-routes/child-routes.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { PostComponent } from '../post/post.component';
+import { CanDeactiveGuard } from './admin/can-deactive.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +25,20 @@ const routes: Routes = [
       {
         path: 'admin',
         component: AdminComponent,
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        canDeactivate: [CanDeactiveGuard],
+
+        children: [
+          {
+            path: 'dashboard',
+            component: AdminDashboardComponent,
+          },
+          {
+            path: 'posts',
+            component: PostComponent,
+          },
+        ],
       },
     ],
   },

@@ -18,4 +18,5 @@ color: #000;
 }
 .content{
   padding-left: 32px;
+  flex-grow: 2;
 }
