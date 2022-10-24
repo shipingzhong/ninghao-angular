@@ -11,7 +11,7 @@ import { CanDeactiveGuard } from './admin/can-deactive.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'demo',
     component: DemoComponent,
     children: [
       {
@@ -24,9 +24,21 @@ const routes: Routes = [
       },
       {
         path: 'admin',
-        loadChildren: () =>
-          import('./admin/admin.module').then((module) => module.AdminModule),
-        canLoad: [AuthGuard],
+        component: AdminComponent,
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        canDeactivate: [CanDeactiveGuard],
+
+        children: [
+          {
+            path: 'dashboard',
+            component: AdminDashboardComponent,
+          },
+          {
+            path: 'posts',
+            component: PostComponent,
+          },
+        ],
       },
     ],
   },
