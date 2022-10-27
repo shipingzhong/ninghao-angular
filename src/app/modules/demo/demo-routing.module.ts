@@ -8,6 +8,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { PostComponent } from '../post/post.component';
 import { CanDeactiveGuard } from './admin/can-deactive.guard';
+import { ObeservableDemoComponent } from './obeservable-demo/obeservable-demo.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
         loadChildren: () =>
           import('./admin/admin.module').then((module) => module.AdminModule),
         canLoad: [AuthGuard],
+      },
+      {
+        path: 'observable',
+        component: ObeservableDemoComponent,
       },
     ],
   },

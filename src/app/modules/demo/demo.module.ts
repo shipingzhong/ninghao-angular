@@ -9,9 +9,10 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { PostModule } from '../post/post.module';
+import { ObeservableDemoComponent } from './obeservable-demo/obeservable-demo.component';
 
 @NgModule({
-  declarations: [DemoComponent, ChildRoutesComponent, LoginComponent],
+  declarations: [DemoComponent, ChildRoutesComponent, LoginComponent, ObeservableDemoComponent],
   imports: [CommonModule, DemoRoutingModule],
 })
 export class DemoModule {}
