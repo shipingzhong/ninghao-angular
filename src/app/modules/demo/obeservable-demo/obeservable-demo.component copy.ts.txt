@@ -1,0 +1,28 @@
+import { Component, OnInit } from '@angular/core';
+import { Observable, of, Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-obeservable-demo',
+  templateUrl: './obeservable-demo.component.html',
+  styleUrls: ['./obeservable-demo.component.css'],
+})
+export class ObeservableDemoComponent implements OnInit {
+  demoObservable: Observable<string>;
+  constructor() {}
+
+  ngOnInit(): void {
+    this.demoObservable = of('hello', 'hola', '您好');
+  }
+
+  // onClick() {
+  //   this.demoObservable.subscribe((value) => console.log(value));
+  // }
+  onClick() {
+    const observer = {
+      next: (value: string) => console.log(value),
+      error: (error: string) => console.log(error),
+      complete: () => console.log('Demo observale completed.'),
+    };
+    this.demoObservable.subscribe(observer);
+  }
+}
