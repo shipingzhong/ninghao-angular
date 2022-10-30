@@ -19,6 +19,7 @@ export class PostService {
   entities: Post[];
 
   postsApi = 'http://localhost:3000/posts';
+  myListApi = 'http://localhost:3000/my-list';
   constructor(private http: HttpClient) {}
 
   index() {
@@ -37,5 +38,16 @@ export class PostService {
   handleError(error: HttpErrorResponse) {
     //  return throwError('Something went wrong');
     return throwError(() => new Error('Something went wrong'));
+  }
+
+  addToList(entity: Post) {
+    return this.http.post<Post>(this.myListApi, entity);
+  }
+  getMyList() {
+    return this.http.get<Post[]>(this.myListApi);
+  }
+
+  removeItemFromList(entityId: number) {
+    return this.http.delete(`${this.myListApi}/${entityId}`);
   }
 }
