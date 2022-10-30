@@ -13,7 +13,7 @@ import { PostService } from './post.service';
 })
 export class PostDetailResolveService implements Resolve<Post> {
   constructor(private postService: PostService) {}
-  resolve(route: ActivatedRouteSnapshot): Post {
+  resolve(route: ActivatedRouteSnapshot): Observable<Post> {
     console.log('Post detail resole service.');
     const postId = +route.paramMap.get('id');
     return this.postService.show(postId);
