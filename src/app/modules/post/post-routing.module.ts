@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostDetailsComponent } from './componets/post-details/post-details.component';
 import { PostComponent } from './post.component';
 import { PostDetailResolveService } from './services/post-detail-resolve.service';
+import { PostEditComponent } from './components/post-edit/post-edit.component';
 
 const routes: Routes = [
   { path: 'posts', component: PostComponent },
@@ -14,6 +15,10 @@ const routes: Routes = [
     },
 
     component: PostDetailsComponent,
+  },
+  {
+    path: 'posts/:id/edit',
+    component: PostEditComponent,
   },
 ];
 

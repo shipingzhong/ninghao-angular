@@ -50,4 +50,8 @@ export class PostService {
   removeItemFromList(entityId: number) {
     return this.http.delete(`${this.myListApi}/${entityId}`);
   }
+
+  update(id: number, entity: Post) {
+    return this.http.put<Post>(`${this.postsApi}/${id}`, entity);
+  }
 }

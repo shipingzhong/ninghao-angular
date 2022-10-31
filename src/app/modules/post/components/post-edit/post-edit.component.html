@@ -1,0 +1,26 @@
+<form [formGroup]="postEditForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="id" />
+  <label for="">
+    <p>Title</p>
+    <input type="text" formControlName="title" />
+  </label>
+  <label for="">
+    <p>Image</p>
+    <input type="text" formControlName="image" />
+  </label>
+  <label for="">
+    <p>Body</p>
+    <textarea formControlName="body" rows="10"></textarea>
+  </label>
+  <p>
+    <button type="submit">Update</button>
+  </p>
+
+  <p>
+    <strong>
+      <small>
+        <a routerLink="../">Back</a>
+      </small>
+    </strong>
+  </p>
+</form>
