@@ -51,7 +51,7 @@ export class PostService {
     return this.http.delete(`${this.myListApi}/${entityId}`);
   }
 
-  update(id: number, entity: Post) {
-    return this.http.put<Post>(`${this.postsApi}/${id}`, entity);
+  update(id: number, entity) {
+    return this.http.put(`${this.postsApi}/${id}`, entity);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { PostService } from '../../services/post.service';
@@ -11,7 +11,6 @@ import { PostService } from '../../services/post.service';
 })
 export class PostEditComponent implements OnInit {
   postEditForm = this.formBuilder.group({
-    id: [0],
     title: [''],
     body: [''],
     image: [''],
